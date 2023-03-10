@@ -5,6 +5,8 @@ project:
     port: 4200
     browser: true
     navigate: true
+  resources:
+    - "experiment/"
 
 website:
   title: "flanker-datapipe"

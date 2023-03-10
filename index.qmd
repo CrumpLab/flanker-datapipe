@@ -7,3 +7,15 @@ The purpose of this website is to test a workflow for persistent [jspsych](https
 1. The experiment is hosted on this github repository. 
 2. Data is sent to an [OSF](https://osf.io) storage bucket using [datapipe](https://pipe.jspsych.org).
 3. Find out if it is possible to use [webR](https://github.com/r-wasm/webr) to import data from osf, then analyse and plot it.
+
+# Flanker experiment
+
+This is just a demo to test the workflow. Clicking this link will load a short 24 trial flanker experiment. No identifying information is collected. The workflow includes sending the reaction time data from each trial to a repository on open-science foundation.
+
+[ x ] - code flanker experiment
+
+[ ] - make OSF repository
+
+[ ] - add datapipe to send data to OSF repository
+
+<https://www.crumplab.com/flanker-datapipe/experiment/flanker.html>

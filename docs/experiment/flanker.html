@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A Flanker Experiment</title>
+    <script src="stimlist.js"></script>
+    <script src="jspsych/dist/jspsych.js"></script>
+    <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/dist/plugin-html-button-response.js"></script>
+    <script src="jspsych/dist/plugin-survey-text.js"></script>
+    <script src="jspsych/dist/plugin-preload.js"></script>
+    <link href="jspsych/dist/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+
+     /* initialize jsPsych */
+    var jsPsych = initJsPsych({
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+
+    /* create timeline */
+    var timeline = [];
+
+
+    /* define welcome message trial */
+    var welcome = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: `
+      <p> Welcome, this is a demo Flanker Experiment</p>
+      <p> If you participate in this experiment, your data will be saved to a repository on the open science foundation. </p>
+      <p> All data is completely anonymous.</p>
+      `
+    };
+    timeline.push(welcome);
+
+    /* define instructions trial */
+    var instructions = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: `
+        <p>In this experiment, your task is to identify the middle letter as fast and accurately as possible.</p>
+        <p>For example if you saw:</p>
+        <p>F F F </p>
+        <p>You would press the F key on the keyboard as quickly as you can.</p>
+        <br>
+        <p>For example if you saw:</p>
+        <p>H G H </p>
+        <p>You would press the G key on the keyboard as quickly as you can. </p>
+        <p> This demo experiment has 24 trials and takes less than a minute. </p>
+        <p>Press any key to begin.</p>
+      `,
+      post_trial_gap: 1000
+    };
+    timeline.push(instructions);
+
+    /* define trial stimuli array for timeline variables */
+    var flanker_stimuli = [
+      { stimulus: '<div style="font-size:60px;">F F F</div>',  correct_response: 'f', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">D D D</div>',  correct_response: 'd', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">H H H</div>',  correct_response: 'h', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">J J J</div>',  correct_response: 'j', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">F F F</div>',  correct_response: 'f', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">D D D</div>',  correct_response: 'd', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">H H H</div>',  correct_response: 'h', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">J J J</div>',  correct_response: 'j', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">F F F</div>',  correct_response: 'f', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">D D D</div>',  correct_response: 'd', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">H H H</div>',  correct_response: 'h', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">J J J</div>',  correct_response: 'j', distractor: "compatible"},
+      { stimulus: '<div style="font-size:60px;">D F D</div>',  correct_response: 'f', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">H F H</div>',  correct_response: 'f', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">J F J</div>',  correct_response: 'f', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">F D F</div>',  correct_response: 'd', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">H D H</div>',  correct_response: 'd', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">J D J</div>',  correct_response: 'd', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">D H D</div>',  correct_response: 'h', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">F H F</div>',  correct_response: 'h', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">J H J</div>',  correct_response: 'h', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">D J D</div>',  correct_response: 'h', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">H J H</div>',  correct_response: 'h', distractor: "incompatible"},
+      { stimulus: '<div style="font-size:60px;">F J F</div>',  correct_response: 'h', distractor: "incompatible"}
+    ];
+
+    /* define fixation and test trials */
+    var fixation = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: '<div style="font-size:60px;">+</div>',
+      choices: "NO_KEYS",
+      trial_duration: 500,
+      data: {
+        task: 'fixation'
+      }
+    };
+
+    var test = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      choices: ['d', 'f','h','j'],
+      data: {
+        task: 'response',
+        distractor: jsPsych.timelineVariable('distractor'),
+        correct_response: jsPsych.timelineVariable('correct_response')
+      },
+      on_finish: function(data){
+        data.correct = jsPsych.pluginAPI.compareKeys(data.response, data.correct_response);
+      }
+    };
+
+    /* define test procedure */
+    var test_procedure = {
+      timeline: [fixation, test],
+      timeline_variables: flanker_stimuli,
+      repetitions: 1,
+      randomize_order: true
+    };
+    timeline.push(test_procedure);
+
+    /* define debrief */
+    var debrief = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: `
+      <p> Thank you for participating. </p>
+      `
+    };
+    timeline.push(debrief);
+
+    /* start the experiment */
+    jsPsych.run(timeline);
+
+  </script>
+</html>

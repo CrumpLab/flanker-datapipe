@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.210">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>flanker-datapipe – version</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">flanker-datapipe</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<p>Included in this release:</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Version</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>jspsych</td>
+<td>7.3.1</td>
+<td>https://www.jspsych.org/7.3/</td>
+</tr>
+<tr class="even">
+<td>extension-mouse-tracking</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/extensions/mouse-tracking</td>
+</tr>
+<tr class="odd">
+<td>extension-record-video</td>
+<td>1.0.1</td>
+<td>https://www.jspsych.org/7.3/extensions/record-video</td>
+</tr>
+<tr class="even">
+<td>extension-webgazer</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/extensions/webgazer</td>
+</tr>
+<tr class="odd">
+<td>plugin-animation</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/animation</td>
+</tr>
+<tr class="even">
+<td>plugin-audio-button-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/audio-button-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-audio-keyboard-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/audio-keyboard-response</td>
+</tr>
+<tr class="even">
+<td>plugin-audio-slider-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/audio-slider-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-browser-check</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/browser-check</td>
+</tr>
+<tr class="even">
+<td>plugin-call-function</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/call-function</td>
+</tr>
+<tr class="odd">
+<td>plugin-canvas-button-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/canvas-button-response</td>
+</tr>
+<tr class="even">
+<td>plugin-canvas-keyboard-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/canvas-keyboard-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-canvas-slider-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/canvas-slider-response</td>
+</tr>
+<tr class="even">
+<td>plugin-categorize-animation</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/categorize-animation</td>
+</tr>
+<tr class="odd">
+<td>plugin-categorize-html</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/categorize-html</td>
+</tr>
+<tr class="even">
+<td>plugin-categorize-image</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/categorize-image</td>
+</tr>
+<tr class="odd">
+<td>plugin-cloze</td>
+<td>1.2.0</td>
+<td>https://www.jspsych.org/7.3/plugins/cloze</td>
+</tr>
+<tr class="even">
+<td>plugin-external-html</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/external-html</td>
+</tr>
+<tr class="odd">
+<td>plugin-free-sort</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/free-sort</td>
+</tr>
+<tr class="even">
+<td>plugin-fullscreen</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/fullscreen</td>
+</tr>
+<tr class="odd">
+<td>plugin-html-audio-response</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/html-audio-response</td>
+</tr>
+<tr class="even">
+<td>plugin-html-button-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/html-button-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-html-keyboard-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/html-keyboard-response</td>
+</tr>
+<tr class="even">
+<td>plugin-html-slider-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/html-slider-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-html-video-response</td>
+<td>1.0.1</td>
+<td>https://www.jspsych.org/7.3/plugins/html-video-response</td>
+</tr>
+<tr class="even">
+<td>plugin-iat-html</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/iat-html</td>
+</tr>
+<tr class="odd">
+<td>plugin-iat-image</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/iat-image</td>
+</tr>
+<tr class="even">
+<td>plugin-image-button-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/image-button-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-image-keyboard-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/image-keyboard-response</td>
+</tr>
+<tr class="even">
+<td>plugin-image-slider-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/image-slider-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-initialize-camera</td>
+<td>1.0.1</td>
+<td>https://www.jspsych.org/7.3/plugins/initialize-camera</td>
+</tr>
+<tr class="even">
+<td>plugin-initialize-microphone</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/initialize-microphone</td>
+</tr>
+<tr class="odd">
+<td>plugin-instructions</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/instructions</td>
+</tr>
+<tr class="even">
+<td>plugin-maxdiff</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/maxdiff</td>
+</tr>
+<tr class="odd">
+<td>plugin-mirror-camera</td>
+<td>1.0.1</td>
+<td>https://www.jspsych.org/7.3/plugins/mirror-camera</td>
+</tr>
+<tr class="even">
+<td>plugin-preload</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/preload</td>
+</tr>
+<tr class="odd">
+<td>plugin-reconstruction</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/reconstruction</td>
+</tr>
+<tr class="even">
+<td>plugin-resize</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/resize</td>
+</tr>
+<tr class="odd">
+<td>plugin-same-different-html</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/same-different-html</td>
+</tr>
+<tr class="even">
+<td>plugin-same-different-image</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/same-different-image</td>
+</tr>
+<tr class="odd">
+<td>plugin-serial-reaction-time-mouse</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/serial-reaction-time-mouse</td>
+</tr>
+<tr class="even">
+<td>plugin-serial-reaction-time</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/serial-reaction-time</td>
+</tr>
+<tr class="odd">
+<td>plugin-sketchpad</td>
+<td>1.0.3</td>
+<td>https://www.jspsych.org/7.3/plugins/sketchpad</td>
+</tr>
+<tr class="even">
+<td>plugin-survey-html-form</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/survey-html-form</td>
+</tr>
+<tr class="odd">
+<td>plugin-survey-likert</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/survey-likert</td>
+</tr>
+<tr class="even">
+<td>plugin-survey-multi-choice</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/survey-multi-choice</td>
+</tr>
+<tr class="odd">
+<td>plugin-survey-multi-select</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/survey-multi-select</td>
+</tr>
+<tr class="even">
+<td>plugin-survey-text</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/survey-text</td>
+</tr>
+<tr class="odd">
+<td>plugin-survey</td>
+<td>0.2.1</td>
+<td>https://www.jspsych.org/7.3/plugins/survey</td>
+</tr>
+<tr class="even">
+<td>plugin-video-button-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/video-button-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-video-keyboard-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/video-keyboard-response</td>
+</tr>
+<tr class="even">
+<td>plugin-video-slider-response</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/video-slider-response</td>
+</tr>
+<tr class="odd">
+<td>plugin-virtual-chinrest</td>
+<td>2.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/virtual-chinrest</td>
+</tr>
+<tr class="even">
+<td>plugin-visual-search-circle</td>
+<td>1.1.2</td>
+<td>https://www.jspsych.org/7.3/plugins/visual-search-circle</td>
+</tr>
+<tr class="odd">
+<td>plugin-webgazer-calibrate</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/webgazer-calibrate</td>
+</tr>
+<tr class="even">
+<td>plugin-webgazer-init-camera</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/webgazer-init-camera</td>
+</tr>
+<tr class="odd">
+<td>plugin-webgazer-validate</td>
+<td>1.0.2</td>
+<td>https://www.jspsych.org/7.3/plugins/webgazer-validate</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
