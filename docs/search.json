@@ -109,7 +109,7 @@
     "href": "index.html#webr",
     "title": "flanker-datapipe",
     "section": "webR",
-    "text": "webR\nwebR is a new tool to run R in the browser through web assembly. I’m cobbling together code from these sources:\nrepo: https://github.com/r-wasm/webr/ documentation: https://docs.r-wasm.org/webr/latest/ quarto example: https://github.com/coatless-r-n-d/webR-quarto-demos\nThanks to all of the webR developers for this!"
+    "text": "webR\nwebR is a new tool to run R in the browser through web assembly. I’m cobbling together code from these sources:\nrepo: https://github.com/r-wasm/webr/ documentation: https://docs.r-wasm.org/webr/latest/ quarto example: https://github.com/coatless-r-n-d/webR-quarto-demos\nThanks to all of the webR developers for this!\n\n\n\n\n\nWarning in file(file, ifelse(append, \"a\", \"w\")): cannot open file\n'flanker-datapipe/webr-worker.js': No such file or directory\nError in file(file, ifelse(append, \"a\", \"w\")): cannot open the connection\nWarning in file(file, ifelse(append, \"a\", \"w\")): cannot open file\n'flanker-datapipe/webr-serviceworker.js': No such file or directory\nError in file(file, ifelse(append, \"a\", \"w\")): cannot open the connection"
   },
   {
     "objectID": "index.html#webr-test",
