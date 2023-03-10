@@ -103,5 +103,19 @@
     "title": "flanker-datapipe",
     "section": "Analyze results",
     "text": "Analyze results\nThis approach analyzes the results locally whenever the quarto page is rendered.\n\nlibrary(osfr)\n\n\n# get project\nflanker_data <- osf_retrieve_node(\"k5w3d\")\n\n#get file names\nflanker_files <- osf_ls_files(flanker_data)\n\n#download data files\nosf_download(flanker_files, path = \"data/\")\n\n\nlibrary(dplyr)\nlibrary(rio)\n\n# import individual json files and merge to tibble\nfile_list <- list.files(\"data\", full.names = TRUE)\nall_data <- lapply(file_list,rio::import)\nall_data <- bind_rows(all_data)\n\n# RT Analysis\nfilter_data <- all_data %>%\n  filter(task == \"response\",\n         correct == TRUE) %>%\n  group_by(ID,distractor) %>%\n  summarize(subject_mean_rt = mean(rt))\n  \ngroup_means <- filter_data %>%\n  group_by(distractor) %>%\n  summarize(group_mean_rt = mean(subject_mean_rt),\n            sem = sd(subject_mean_rt)/sqrt(length(group_mean_rt)))\n\nknitr::kable(group_means)\n\n\n\n\ndistractor\ngroup_mean_rt\nsem\n\n\n\n\ncompatible\n680.2475\n38.56282\n\n\nincompatible\n718.3704\n45.74181"
+  },
+  {
+    "objectID": "index.html#webr",
+    "href": "index.html#webr",
+    "title": "flanker-datapipe",
+    "section": "webR",
+    "text": "webR\nwebR is a new tool to run R in the browser through web assembly. I’m cobbling together code from these sources:\nrepo: https://github.com/r-wasm/webr/ documentation: https://docs.r-wasm.org/webr/latest/ quarto example: https://github.com/coatless-r-n-d/webR-quarto-demos\nThanks to all of the webR developers for this!"
+  },
+  {
+    "objectID": "index.html#webr-test",
+    "href": "index.html#webr-test",
+    "title": "flanker-datapipe",
+    "section": "webR test",
+    "text": "webR test\n\n\nLoading webR…"
   }
 ]
