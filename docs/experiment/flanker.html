@@ -9,6 +9,7 @@
     <script src="jspsych/dist/plugin-survey-text.js"></script>
     <script src="jspsych/dist/plugin-preload.js"></script>
     <link href="jspsych/dist/jspsych.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
   </head>
   <body></body>
   <script>
@@ -19,6 +20,12 @@
         jsPsych.data.displayData();
       }
     });
+
+
+    const subject_id = jsPsych.randomization.randomID(10);
+    const filename = `${subject_id}.json`;
+    jsPsych.data.addProperties({ID: subject_id});
+
 
     /* create timeline */
     var timeline = [];
@@ -120,10 +127,19 @@
     var debrief = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: `
-      <p> Thank you for participating. </p>
+      <p> Thank you for participating. Press a key to save data to osf.</p>
       `
     };
     timeline.push(debrief);
+
+    const save_data = {
+      type: jsPsychPipe,
+      action: "save",
+      experiment_id: "vpGGSYov3OLF",
+      filename: filename,
+      data_string: ()=>jsPsych.data.get().json()
+      };
+    timeline.push(save_data)
 
     /* start the experiment */
     jsPsych.run(timeline);
