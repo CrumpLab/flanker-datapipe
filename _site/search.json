@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "flanker-datapipe",
+    "section": "",
+    "text": "The purpose of this website is to test a workflow for persistent jspsych experiments using static webpages.\n\nThe experiment is hosted on this github repository.\nData is sent to an OSF storage bucket using datapipe.\nFind out if it is possible to use webR to import data from osf, then analyse and plot it."
+  }
+]

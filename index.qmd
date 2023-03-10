@@ -1,0 +1,9 @@
+---
+title: "flanker-datapipe"
+---
+
+The purpose of this website is to test a workflow for persistent [jspsych](https://www.jspsych.org/7.3/) experiments using static webpages. 
+
+1. The experiment is hosted on this github repository. 
+2. Data is sent to an [OSF](https://osf.io) storage bucket using [datapipe](https://pipe.jspsych.org).
+3. Find out if it is possible to use [webR](https://github.com/r-wasm/webr) to import data from osf, then analyse and plot it.
