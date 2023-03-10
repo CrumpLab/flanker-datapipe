@@ -109,13 +109,20 @@
     "href": "index.html#webr",
     "title": "flanker-datapipe",
     "section": "webR",
-    "text": "webR\nwebR is a new tool to run R in the browser through web assembly. I’m cobbling together code from these sources:\nrepo: https://github.com/r-wasm/webr/ documentation: https://docs.r-wasm.org/webr/latest/ quarto example: https://github.com/coatless-r-n-d/webR-quarto-demos\nThanks to all of the webR developers for this!"
+    "text": "webR\nwebR is a new tool to run R in the browser through web assembly. I’m cobbling together code from these sources:\nrepo: https://github.com/r-wasm/webr/\ndocumentation: https://docs.r-wasm.org/webr/latest/\nquarto example: https://github.com/coatless-r-n-d/webR-quarto-demos\nThanks to all of the webR developers for this!"
   },
   {
     "objectID": "index.html#webr-test",
     "href": "index.html#webr-test",
     "title": "flanker-datapipe",
     "section": "webR test",
-    "text": "webR test\n\n\nLoading webR…"
+    "text": "webR test\nThis is just a test to see if webR works.\n\n\nLoading webR…"
+  },
+  {
+    "objectID": "index.html#webr-1",
+    "href": "index.html#webr-1",
+    "title": "flanker-datapipe",
+    "section": "webR",
+    "text": "webR\n\n\nLoading webR…"
   }
 ]

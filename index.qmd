@@ -80,7 +80,9 @@ knitr::kable(group_means)
 webR is a new tool to run R in the browser through web assembly. I'm cobbling together code from these sources:
 
 repo: <https://github.com/r-wasm/webr/>
+
 documentation: <https://docs.r-wasm.org/webr/latest/>
+
 quarto example: <https://github.com/coatless-r-n-d/webR-quarto-demos>
 
 Thanks to all of the webR developers for this!
@@ -215,7 +217,19 @@ knitr::knit_engines$set(webr = function(options) {
 
 ## webR test
 
+This is just a test to see if webR works.
+
 ```{webr}
 fit = lm(mpg ~ am, data=mtcars)
 summary(fit)
+```
+
+
+## webR
+
+```{webr}
+webr::install("osfr")
+library("osfr")
+flanker_data <- osf_retrieve_node("k5w3d")
+flanker_data
 ```
