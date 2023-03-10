@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "flanker-datapipe",
     "section": "",
-    "text": "The purpose of this website is to test a workflow for persistent jspsych experiments using static webpages.\n\nThe experiment is hosted on this github repository.\nData is sent to an OSF storage bucket using datapipe.\nFind out if it is possible to use webR to import data from osf, then analyse and plot it.\n\n\nFlanker experiment\nThis is just a demo to test the workflow. Clicking this link will load a short 24 trial flanker experiment. No identifying information is collected. The workflow includes sending the reaction time data from each trial to a repository on open-science foundation.\n[ x ] - code flanker experiment\n[ ] - make OSF repository\n[ ] - add datapipe to send data to OSF repository\nhttps://www.crumplab.com/flanker-datapipe/experiment/flanker.html"
+    "text": "The purpose of this website is to test a workflow for persistent jspsych experiments using static webpages."
   },
   {
     "objectID": "experiment/jspsych/code-of-conduct.html",
@@ -82,5 +82,19 @@
     "title": "flanker-datapipe",
     "section": "Contributors",
     "text": "Contributors\njsPsych is open source project with numerous contributors. The project is currently managed by the core team of Josh de Leeuw (@jodeleeuw), Becky Gilbert (@becky-gilbert), and Björn Luchterhandt (@bjoluc).\njsPsych was created by Josh de Leeuw.\nWe’re also grateful for the generous support from a Mozilla Open Source Support award, which funded development of the library from 2020-2021."
+  },
+  {
+    "objectID": "index.html#demo-experiment",
+    "href": "index.html#demo-experiment",
+    "title": "flanker-datapipe",
+    "section": "Demo Experiment",
+    "text": "Demo Experiment\nhttps://www.crumplab.com/flanker-datapipe/experiment/flanker.html"
+  },
+  {
+    "objectID": "index.html#osf-project",
+    "href": "index.html#osf-project",
+    "title": "flanker-datapipe",
+    "section": "OSF project",
+    "text": "OSF project\nhttps://osf.io/4bzt2/"
   }
 ]

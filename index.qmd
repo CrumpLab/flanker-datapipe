@@ -14,8 +14,16 @@ This is just a demo to test the workflow. Clicking this link will load a short 2
 
 [ x ] - code flanker experiment
 
-[ ] - make OSF repository
+[ x ] - make OSF repository
 
-[ ] - add datapipe to send data to OSF repository
+[ x ] - add datapipe to send data to OSF repository
+
+## Demo Experiment
 
 <https://www.crumplab.com/flanker-datapipe/experiment/flanker.html>
+
+## OSF project
+
+<https://osf.io/4bzt2/>
+
+
