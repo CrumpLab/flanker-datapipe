@@ -96,5 +96,12 @@
     "title": "flanker-datapipe",
     "section": "OSF project",
     "text": "OSF project\nhttps://osf.io/4bzt2/"
+  },
+  {
+    "objectID": "index.html#analyze-results",
+    "href": "index.html#analyze-results",
+    "title": "flanker-datapipe",
+    "section": "Analyze results",
+    "text": "Analyze results\nThis approach analyzes the results locally whenever the quarto page is rendered.\n\nlibrary(osfr)\n\n\n# get project\nflanker_data <- osf_retrieve_node(\"k5w3d\")\n\n#get file names\nflanker_files <- osf_ls_files(flanker_data)\n\n#download data files\nosf_download(flanker_files, path = \"data/\")\n\n\nlibrary(dplyr)\nlibrary(rio)\n\n# import individual json files and merge to tibble\nfile_list <- list.files(\"data\", full.names = TRUE)\nall_data <- lapply(file_list,rio::import)\nall_data <- bind_rows(all_data)\n\n# RT Analysis\nfilter_data <- all_data %>%\n  filter(task == \"response\",\n         correct == TRUE) %>%\n  group_by(ID,distractor) %>%\n  summarize(subject_mean_rt = mean(rt))\n  \ngroup_means <- filter_data %>%\n  group_by(distractor) %>%\n  summarize(group_mean_rt = mean(subject_mean_rt),\n            sem = sd(subject_mean_rt)/sqrt(length(group_mean_rt)))\n\nknitr::kable(group_means)\n\n\n\n\ndistractor\ngroup_mean_rt\nsem\n\n\n\n\ncompatible\n680.2475\n38.56282\n\n\nincompatible\n718.3704\n45.74181"
   }
 ]

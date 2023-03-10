@@ -27,3 +27,50 @@ This is just a demo to test the workflow. Clicking this link will load a short 2
 <https://osf.io/4bzt2/>
 
 
+## Analyze results
+
+This approach analyzes the results locally whenever the quarto page is rendered.
+
+```{r, eval = FALSE}
+library(osfr)
+
+
+# get project
+flanker_data <- osf_retrieve_node("k5w3d")
+
+#get file names
+flanker_files <- osf_ls_files(flanker_data)
+
+#download data files
+osf_download(flanker_files, path = "data/")
+
+```
+
+```{r, message=FALSE,warning=FALSE}
+library(dplyr)
+library(rio)
+
+# import individual json files and merge to tibble
+file_list <- list.files("data", full.names = TRUE)
+all_data <- lapply(file_list,rio::import)
+all_data <- bind_rows(all_data)
+
+# RT Analysis
+filter_data <- all_data %>%
+  filter(task == "response",
+         correct == TRUE) %>%
+  group_by(ID,distractor) %>%
+  summarize(subject_mean_rt = mean(rt))
+  
+group_means <- filter_data %>%
+  group_by(distractor) %>%
+  summarize(group_mean_rt = mean(subject_mean_rt),
+            sem = sd(subject_mean_rt)/sqrt(length(group_mean_rt)))
+
+knitr::kable(group_means)
+
+```
+
+
+
+
