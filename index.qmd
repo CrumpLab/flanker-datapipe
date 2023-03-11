@@ -229,3 +229,18 @@ summary(fit)
 
 Most R packages are not compiled for webR. Wasn't able to get it working, but will come back and fiddle sometime soon.
 
+```{r, eval=FALSE, echo=FALSE}
+test <- httr::GET("https://api.osf.io/v2/nodes/k5w3d/files/osfstorage/?filter[kind]=file")
+
+
+content <- rawToChar(test$content)
+r_content <- jsonlite::fromJSON(content)
+```
+
+```{=html}
+<script type="text/javascript" src="https://unpkg.com/d3@7.8.0/dist/d3.min.js"></script>
+<script>
+
+let tryd3 = d3.request("https://api.osf.io/v2/nodes/k5w3d/files/osfstorage/?filter[kind]=file").get(callback);
+</script>
+```
