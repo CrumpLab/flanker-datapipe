@@ -227,9 +227,5 @@ summary(fit)
 
 ## webR
 
-```{webr}
-webr::install("osfr")
-library("osfr")
-flanker_data <- osf_retrieve_node("k5w3d")
-flanker_data
-```
+Most R packages are not compiled for webR. Wasn't able to get it working, but will come back and fiddle sometime soon.
+

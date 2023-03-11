@@ -123,6 +123,6 @@
     "href": "index.html#webr-1",
     "title": "flanker-datapipe",
     "section": "webR",
-    "text": "webR\n\n\nLoading webR…"
+    "text": "webR\nMost R packages are not compiled for webR. Wasn’t able to get it working, but will come back and fiddle sometime soon."
   }
 ]
